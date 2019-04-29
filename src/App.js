@@ -7,14 +7,20 @@ import Test from './components/test'
 
 export default class App extends Component {
 
-  const User = {
-    name: 'Anna',
-    hobbies: ['Sports', 'Reading']
-  }
+    constructor(props) {
+        super(props);
 
-  render() {
-    return (
-      <div className="App">
+        this.state = {
+            user: {
+                name: 'Anna',
+                hobbies: ['Sports', 'Reading']
+            }
+        };
+    }
+
+    render() {
+        return (
+            <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -29,9 +35,14 @@ export default class App extends Component {
             Learn React
           </a>
         </header>
-        // 使用组件
-        <Test name={'max'} age={12} user={User}/>
+        <br/>
+        {1 + 3}
+        <br/>
+        {this.state.user.name}
+        <br/>
+        {/* 使用组件 */}
+        <Test name={'max'} age={12}/>
       </div>
-    );
-  }
+        );
+    }
 }
